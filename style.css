@@ -52,6 +52,11 @@ html{
 a{
   text-decoration: none;
 }
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .google-ads{
   display: table;
   margin: 0 auto;
@@ -128,7 +133,7 @@ a{
     font-size: 14px;
     text-align: center;
   }
-} 
+}
 .content-wrap{
   position: relative;
   max-width: 980px;
