@@ -7,10 +7,12 @@
 
 <!DOCTYPE HTML>
 <html lang="pt-BR">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35484921-1"></script>
   <script>
+    var lazySizes;
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -18,10 +20,10 @@
     gtag('config', 'UA-35484921-1');
   </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php wp_title(''); ?></title>
-  
+
   <?php if ( is_singular() ): ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   <?php endif; ?>
@@ -30,15 +32,9 @@
 
   <link type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet" />
   <link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
-  
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-9051401060868246",
-      enable_page_level_ads: true
-    });
-  </script>
   <?php wp_head(); ?>
 </head>
 <body class="font-hind">
