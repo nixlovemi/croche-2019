@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 @media screen and (max-width: 480px) {
   html, body{
-    overflow-x: hidden;
+    overflow-x: hidden;  
   }
   #menu-top{
     width: 100%;
@@ -627,6 +627,11 @@ article.post-single{
   border: solid 1px #ebebeb;
   padding: 40px 25px 25px 25px;
 }
+article.post-single p img{
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
 article.post-single .post-category{
   display: block;
   margin-bottom: 20px;
@@ -821,6 +826,60 @@ article.post-single .post-content ul li{
 .post-respostas .commentlist .children{
   margin-top: 20px;
   list-style:none;
+}
+#dv-holder-info-curso-croche{
+  width:100%;
+  background-color:#c19989;
+  padding:16px 8px;
+  color:#FFF;
+}
+#dv-holder-info-curso-croche input[type=button]{
+  background-color: #75ba75;
+  color: #FFF;
+  padding: 4px 16px;
+  border: solid 1px #418a41;
+  font-size: 26px;
+  cursor: pointer;
+}
+#dv-holder-info-curso-croche input[type=button].btn-contato{
+  background-color: #347dd1;
+  border: solid 1px #347dd1;
+}
+#dv-holder-info-curso-croche input[type=button]:hover{
+  opacity: 0.7;
+}
+#dv-holder-info-curso-croche p{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+#dv-holder-info-curso-croche p:last-child{
+  margin-bottom: 0px;
+}
+#dv-holder-info-curso-croche p.price{
+  font-size: 34px;
+}
+#dv-holder-info-curso-croche p.price small{
+  font-size: 16px;
+}
+#dv-holder-info-curso-croche p.title{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+#dv-holder-info-curso-croche form p small{
+  font-size:16px;
+  text-align: left !important;
+  float: left;
+  margin-left: 3%;
+}
+#dv-holder-info-curso-croche form p input, #dv-holder-info-curso-croche form p textarea{
+  width: 94%;
+  padding: 3%;
+  border: solid 1px #ccc;
+}
+#dv-holder-info-curso-croche p.formulario-text{
+  font-size: 22px;
 }
 .contact-page .wpcf7-form{
   margin-top: 30px;

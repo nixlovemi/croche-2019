@@ -10,6 +10,17 @@
   </figure>
 </aside>
 
+<!--
+<aside id="top_baixe_app">
+  <h3 class="title font-karla">APROVEITE</h3>
+  <figure class="img-wrap text-widget">
+    <a target="_blank" href="http://bit.ly/2QWuHrU">
+      <img src="https://crochepassoapasso.com.br/wp-content/uploads/2019/11/lacosparapet14.jpg" class="img-responsive" alt="" />
+    </a>
+  </figure>
+</aside>
+-->
+
 <aside>
   <h3 class="title font-karla">Sobre mim</h3>
   <figure class="img-wrap">

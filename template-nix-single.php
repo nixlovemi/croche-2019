@@ -5,13 +5,13 @@
         <input name="urlDownload" id="urlDownload" type="hidden" value="" />
         <input name="linkPost" id="linkPost" type="hidden" value="" />
       </form>
-
-      <?php
+        
+      <?php 
         if ( have_posts() ) {
 	      while ( have_posts() ) {
 		    the_post();
 		    $arrayPostInfo = getArrayPostInfo($post);
-
+		    
 		    // mesmo esquema que tem no functions.php
             $image_post  = wp_get_attachment_image_src(get_post_thumbnail_id($arrayPostInfo["ID"]), 'full');
             $link_post   = $arrayPostInfo["link"];
@@ -20,15 +20,15 @@
             $author      = $arrayPostInfo["author"];
             $totComment  = $arrayPostInfo["totComment"];
             $urlDownload = $arrayPostInfo["urlDownload"];
-
+            
             $tag_id   = $arrayPostInfo["tag_id"];
             $tag_post = $arrayPostInfo["tag"];
             $tag_url  = $arrayPostInfo["tagUrl"];
-
+            
             $cat_id   = $arrayPostInfo["cat_id"];
             $cat_post = $arrayPostInfo["cat"];
             $cat_url  = $arrayPostInfo["catUrl"];
-
+            
             $nomeCaixinha = $tag_post;
             $linkCaixinha = $tag_url;
             if($nomeCaixinha == "" || $linkCaixinha == ""){
@@ -36,7 +36,7 @@
               $linkCaixinha = $cat_url;
             }
             ?>
-
+            
             <article class="post-single">
               <span class="post-category">
                 <a href="<?=$linkCaixinha?>" rel="category tag">
@@ -63,9 +63,9 @@
                   <h2 class="h_sub_topico">Baixe o gráfico/receita: <?=$title_post?>.</h2>
                   <?php
                 }
-
+                
                 the_content();
-
+                
                 if($urlDownload != ""){
                   ?>
                   <p style="text-align:center;">
@@ -78,7 +78,7 @@
                 ?>
               </div>
             </article>
-
+    
             <aside class="post-share">
               <div class="post-share-holder">
                 <a target='_blank' class="font-karla" href="https://www.facebook.com/sharer/sharer.php?display=popup&amp;u=<?=urlencode($link_post)?>">Facebook</a>
@@ -92,7 +92,7 @@
                 <?php
                 $arrLoop = getArrPostsMaisLikes(30, $tag_id, array('170', '160'));
                 shuffle($arrLoop);
-
+                
                 for($i=0; $i<3; $i++){
                   $postItem = $arrLoop[$i];
                   $vLink    = $postItem["link"];
@@ -122,7 +122,7 @@
                 comments_template();
               ?>
             </div>
-
+            
             <?php
 	      } // end while
         } // end if

@@ -3,6 +3,8 @@
 // https://handmade-shop.cmsmasters.net/standard-blog/
 // https://www.iconfinder.com/iconsets/logotypes
 // include_once("functions.php");
+
+$hideMenu = $hideMenu ?? false;
 ?>
 
 <!DOCTYPE HTML>
@@ -12,7 +14,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35484921-1"></script>
   <script>
     var lazySizes;
-
+  
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -20,10 +22,10 @@
     gtag('config', 'UA-35484921-1');
   </script>
 
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php wp_title(''); ?></title>
-
+  
   <?php if ( is_singular() ): ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   <?php endif; ?>
@@ -32,7 +34,7 @@
 
   <link type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet" />
   <link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
-
+  
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <?php wp_head(); ?>
@@ -53,54 +55,60 @@
         </div>
     	</div>
     </div>
-    <div id="menu-content" class="section group">
-      <div class="col span_2_of_12">
-        <ul class="ul-topo" id="social-top">
-          <li>
-            <a href="https://www.facebook.com/CrochePassoAPasso">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo-topo-face.png" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/crochepassoapasso/">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo-topo-insta.png" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col span_8_of_12">
-        <ul class="ul-topo" id="menu-top">
-          <?php #class="selected" ?>
-          <li>
-            <a href="<?php echo site_url(); ?>">Home</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url(); ?>/sessao/ponto-de-croche">Ponto de Crochê</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url(); ?>/sessao/receitas-de-croche-graficos">Receitas e Gráficos</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url(); ?>/sessao/artigos">Artigos</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url(); ?>/sessao/tutorial">Tutorial</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url(); ?>/contato">Contato</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col span_2_of_12">
-        <ul class="ul-topo" id="search-top">
-          <li>
-            <a href="#side_search_form" class="click_form_top">
-              <img src="<?php bloginfo('template_url'); ?>/images/search.png" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <?php
+    if($hideMenu){
+      ?>
+        <div id="menu-content" class="section group">
+          <div class="col span_2_of_12">
+            <ul class="ul-topo" id="social-top">
+              <li>
+                <a href="https://www.facebook.com/CrochePassoAPasso">
+                  <img src="<?php bloginfo('template_url'); ?>/images/logo-topo-face.png" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/crochepassoapasso/">
+                  <img src="<?php bloginfo('template_url'); ?>/images/logo-topo-insta.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col span_8_of_12">
+            <ul class="ul-topo" id="menu-top">
+              <?php #class="selected" ?>
+              <li>
+                <a href="<?php echo site_url(); ?>">Home</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url(); ?>/sessao/ponto-de-croche">Ponto de Crochê</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url(); ?>/sessao/receitas-de-croche-graficos">Receitas e Gráficos</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url(); ?>/sessao/artigos">Artigos</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url(); ?>/sessao/tutorial">Tutorial</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url(); ?>/contato">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col span_2_of_12">
+            <ul class="ul-topo" id="search-top">
+              <li>
+                <a href="#side_search_form" class="click_form_top">
+                  <img src="<?php bloginfo('template_url'); ?>/images/search.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <?php
+    }
+    ?>
     <?php
     /*
     <div class="content-wrap">
