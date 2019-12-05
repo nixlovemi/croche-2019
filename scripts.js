@@ -62,7 +62,7 @@ jQuery('.click_top_baixe_app').click(function(e){
   } else if( isMobile.Android ){
     document.location.href = 'http://bit.ly/2MZUCwH';
   } else {
-    alert('Nosso aplicativo s¨® funciona em aparelhos com Android ou IOS.');
+    alert('Nosso aplicativo so funciona em aparelhos com Android ou IOS.');
   }
   
   e.preventDefault();

@@ -4,6 +4,7 @@
 // https://www.iconfinder.com/iconsets/logotypes
 // include_once("functions.php");
 
+global $hideMenu, $hideFooter;
 $hideMenu = $hideMenu ?? false;
 ?>
 
@@ -35,8 +36,15 @@ $hideMenu = $hideMenu ?? false;
   <link type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet" />
   <link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <?php
+    if(!$hideMenu){
+      ?>
+      <!-- to carregando no footer -->
+      <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+      <?php
+    }
+  ?>
+  
   <?php wp_head(); ?>
 </head>
 <body class="font-hind">
@@ -56,7 +64,7 @@ $hideMenu = $hideMenu ?? false;
     	</div>
     </div>
     <?php
-    if($hideMenu){
+    if(!$hideMenu){
       ?>
         <div id="menu-content" class="section group">
           <div class="col span_2_of_12">

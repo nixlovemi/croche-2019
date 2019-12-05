@@ -1,5 +1,7 @@
 <?php
 /* Template Name: Curso Crochê */
+global $hideMenu, $hideFooter;
+
 $hideMenu   = true;
 $hideFooter = true;
 ?>

@@ -1,8 +1,9 @@
 <?php
+global $hideMenu, $hideFooter;
 $hideFooter = $hideFooter ?? false;
 ?>
     <?php
-    if($hideFooter){
+    if(!$hideFooter){
       ?>
         <footer class="font-karla" id="site-footer">
           <div class="content-wrap">
@@ -116,14 +117,21 @@ $hideFooter = $hideFooter ?? false;
     
     <script src="<?php bloginfo('template_url'); ?>/scripts.js"></script>
     <script>
+      /* fiz assim pra melhorar no page speed insights */
       window.onload = function(){
         setTimeout(function(){
+          var script = document.createElement('script');
+          script.async = true;
+          script.type = 'text/javascript';
+          script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+          document.getElementsByTagName('HEAD').item(0).appendChild(script);
+            
           (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-9051401060868246",
             enable_page_level_ads: true
           });
-        }, 500);
+        }, 1100);
       };
-  </script>
+    </script>
   </body>
 </html>
