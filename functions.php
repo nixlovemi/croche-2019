@@ -117,16 +117,8 @@ function send_contact($request) {
     $to      = 'carla@crochepassoapasso.com.br';
     $subject = 'Contato APP';
     $body    = "Nome: $vNome<br />Email: $vEmail<br /><br /><i>".nl2br($vMsg)."</i>";
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-     
-    $ret     = wp_mail( $to, $subject, $body, $headers );   
-    if($ret){
-      $retErro =  false;
-      $retMsg  = "Contato enviado com sucesso!";
-    } else {
-      $retErro =  true;
-      $retMsg  = "Erro ao enviar contato! Tente novamente mais tarde!";
-    }
+    
+    [$retErro, $retMsg] = enviaEmail($to, $subject, $body);
   }
   
   $response = new WP_REST_Response(array(
@@ -608,4 +600,23 @@ function getRecentPosts($numPosts=5, $category=3, $thumbSize=array('450', '450')
   
   wp_reset_query(); // Restore global post data stomped by the_post().
   return $arrRet;
+}
+
+function enviaEmail($para, $titulo, $mensagem)
+{
+  $to      = $para;
+  $subject = $titulo;
+  $body    = $mensagem;
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+     
+  $ret     = wp_mail( $to, $subject, $body, $headers );   
+  if($ret){
+    $retErro =  false;
+    $retMsg  = "Contato enviado com sucesso!";
+  } else {
+    $retErro =  true;
+    $retMsg  = "Erro ao enviar contato! Tente novamente mais tarde!";
+  }
+  
+  return [$retErro, $retMsg];
 }

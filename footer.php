@@ -130,7 +130,9 @@ $hideFooter = $hideFooter ?? false;
             google_ad_client: "ca-pub-9051401060868246",
             enable_page_level_ads: true
           });
-        }, 1100);
+          
+          window.scrollTo(0, 0);
+        }, 1000);
       };
     </script>
   </body>
