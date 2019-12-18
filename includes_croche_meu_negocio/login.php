@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     global $wpdb;
     
     $escpLogin = esc_sql($login);
-    $escpSenha = esc_sql(strtoupper($senha));
+    $escpSenha = esc_sql($senha);
     
     $sql = "
       SELECT cmn_id, cmn_login, cmn_senha, cmn_nome, cmn_telefone, cmn_dtcadastro, cmn_validade, cmn_ativo

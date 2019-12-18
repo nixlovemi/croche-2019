@@ -289,7 +289,7 @@ function gera_post($arrParams, $marginTop=0)
   $html .= "  <div class='post-meta'>";
   $html .= "    por $vAutor em $vDataPost";
   $html .= "  </div>";
-  $html .= "  <header class='entry-header'>";
+  $html .= "  <header class='entry-header'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
   $html .= "    <h2 class='entry-title font-lora'>";
   $html .= "      <a href='$vUrlPost'>$vTitulo</a>";
   $html .= "    </h2>";
@@ -620,3 +620,16 @@ function enviaEmail($para, $titulo, $mensagem)
   
   return [$retErro, $retMsg];
 }
+/* pra add JS do croche multi negocio */
+function admin_js_croche_multi_negocio($hook) {
+  // Only add to the edit.php admin page.
+  // See WP docs.
+  /*if ('edit.php' !== $hook) {
+      return;
+  }*/
+  wp_enqueue_script('my_custom_script', 'https://crochepassoapasso.com.br/wp-content/themes/croche2019/scripts-admin.js');
+  wp_enqueue_script('my_custom_script2', 'https://crochepassoapasso.com.br/wp-content/themes/croche2019/includes_croche_meu_negocio/data-tables/datatables.min.js');
+  wp_enqueue_style('style-name', 'https://crochepassoapasso.com.br/wp-content/themes/croche2019/includes_croche_meu_negocio/data-tables/datatables.min.css');
+}
+add_action('admin_enqueue_scripts', 'admin_js_croche_multi_negocio');
+/* ================================== */
