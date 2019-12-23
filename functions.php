@@ -289,7 +289,7 @@ function gera_post($arrParams, $marginTop=0)
   $html .= "  <div class='post-meta'>";
   $html .= "    por $vAutor em $vDataPost";
   $html .= "  </div>";
-  $html .= "  <header class='entry-header'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
+  $html .= '  <header class="entry-header"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
   $html .= "    <h2 class='entry-title font-lora'>";
   $html .= "      <a href='$vUrlPost'>$vTitulo</a>";
   $html .= "    </h2>";
@@ -393,8 +393,16 @@ function getArrPostsMaisLikes($qt_posts = 6, $tag_id = '', $thumbSize=array('450
 
   $my_query = null;
   $my_query = new WP_Query($args);
+  $posts    = $my_query->posts;
 
   $arrResp = array();
+  foreach($posts as $post) {
+    $my_query->the_post();
+    $arrPostInfo = getArrayPostInfo($post, $thumbSize);
+    $arrResp[]   = $arrPostInfo;
+  }
+
+  /*$arrResp = array();
   if ($my_query->have_posts()) {
     $i = 1;
     while ($my_query->have_posts()):
@@ -402,7 +410,7 @@ function getArrPostsMaisLikes($qt_posts = 6, $tag_id = '', $thumbSize=array('450
       $arrPostInfo = getArrayPostInfo($post, $thumbSize);
       $arrResp[]   = $arrPostInfo;
     endwhile;
-  }
+  }*/
   wp_reset_query(); // Restore global post data stomped by the_post().
   return $arrResp;
 }

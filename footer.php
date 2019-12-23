@@ -131,8 +131,8 @@ $hideFooter = $hideFooter ?? false;
             enable_page_level_ads: true
           });
           
-          window.scrollTo(0, 0);
-        }, 1000);
+          // window.scrollTo(0, 0);
+        }, 100);
       };
     </script>
   </body>
